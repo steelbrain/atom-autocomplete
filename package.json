@@ -4,7 +4,9 @@
   "description": "Collection of node helper modules for Atom's autocomplete providers",
   "main": "lib/index.js",
   "scripts": {
-    "test": "apm test"
+    "test": "apm test",
+    "compile": "ucompiler go",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
