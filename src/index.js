@@ -1,6 +1,6 @@
 'use strict'
 
-const PREFIX_REGEX = /[^ ]$/
+const PREFIX_REGEX = /[^ ,{}();'"]$/
 
 function shouldTriggerAutocomplete({ editor, activatedManually, bufferPosition }) {
   if (activatedManually) {
