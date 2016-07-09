@@ -1,5 +1,3 @@
-'use strict'
-
 const PREFIX_REGEX = /[^ ,{}();'"]$/
 
 function shouldTriggerAutocomplete({ editor, activatedManually, bufferPosition }) {
