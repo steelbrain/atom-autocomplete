@@ -1,7 +1,7 @@
 {
   "name": "atom-autocomplete",
   "version": "1.0.0",
-  "description": "Collection of node helper modules for Atom's autocomplete providers",
+  "description": "Collection of node helpers for Atom's autocomplete providers",
   "main": "lib/index.js",
   "scripts": {
     "test": "apm test",
