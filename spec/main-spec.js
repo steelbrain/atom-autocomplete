@@ -1,17 +1,15 @@
-'use babel'
+/* @flow */
 
 import { Point } from 'atom'
+import { beforeEach } from 'jasmine-fix'
 import * as Helpers from '../'
 
 describe('Atom-Autocomplete', function() {
   let editor
 
-  beforeEach(function() {
-    waitsForPromise(function() {
-      return atom.workspace.open(__filename).then(function() {
-        editor = atom.workspace.getActiveTextEditor()
-      })
-    })
+  beforeEach(async function() {
+    await atom.workspace.open(__filename)
+    editor = atom.workspace.getActiveTextEditor()
   })
   afterEach(function() {
     atom.workspace.destroyActivePaneItem()
@@ -27,9 +25,9 @@ describe('Atom-Autocomplete', function() {
     })
 
     it('only allows autocomplete at appropriate times', function() {
-      expect(Helpers.shouldTriggerAutocomplete({ editor, bufferPosition: getPoint([6, 6]) })).toBe(false)
-      expect(Helpers.shouldTriggerAutocomplete({ editor, bufferPosition: getPoint([6, 7]) })).toBe(true)
-      expect(Helpers.shouldTriggerAutocomplete({ editor, bufferPosition: getPoint([6, Infinity]) })).toBe(true)
+      expect(Helpers.shouldTriggerAutocomplete({ editor, bufferPosition: getPoint([7, 6]) })).toBe(false)
+      expect(Helpers.shouldTriggerAutocomplete({ editor, bufferPosition: getPoint([7, 7]) })).toBe(true)
+      expect(Helpers.shouldTriggerAutocomplete({ editor, bufferPosition: getPoint([7, Infinity]) })).toBe(true)
       expect(Helpers.shouldTriggerAutocomplete({ editor, bufferPosition: getPoint([3, Infinity]) })).toBe(false)
       expect(Helpers.shouldTriggerAutocomplete({ editor, bufferPosition: getPoint([5, Infinity]) })).toBe(false)
     })

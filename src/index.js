@@ -1,6 +1,8 @@
+/* @flow */
+
 const PREFIX_REGEX = /[^ ,{}();'"]$/
 
-function shouldTriggerAutocomplete({ editor, activatedManually, bufferPosition }) {
+function shouldTriggerAutocomplete({ editor, activatedManually, bufferPosition }: Object) {
   if (activatedManually) {
     return true
   }

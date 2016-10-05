@@ -3,11 +3,6 @@
   "version": "1.0.0",
   "description": "Collection of node helpers for Atom's autocomplete providers",
   "main": "lib/index.js",
-  "scripts": {
-    "test": "apm test",
-    "compile": "ucompiler go",
-    "lint": "eslint ."
-  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/steelbrain/atom-autocomplete.git"
@@ -22,9 +17,17 @@
   },
   "homepage": "https://github.com/steelbrain/atom-autocomplete#readme",
   "devDependencies": {
-    "babel-preset-steelbrain": "^2.0.1",
-    "eslint-config-steelbrain": "^1.0.1",
-    "ucompiler": "^3.1.8",
-    "ucompiler-plugin-babel": "^3.1.1"
+    "babel-cli": "^6.10.1",
+    "babel-preset-steelbrain": "^4.0.1",
+    "eslint-config-steelbrain": "^1.0.4",
+    "flow-bin": "^0.32.0",
+    "jasmine-fix": "^1.0.1"
+  },
+  "scripts": {
+    "lint": "(flow check) && (eslint .)",
+    "test": "apm test",
+    "clean": "rm -rf lib",
+    "compile": "npm run clean && babel src --out-dir lib",
+    "watch": "npm run compile -- --watch"
   }
 }
