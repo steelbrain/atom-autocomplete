@@ -1,4 +1,4 @@
-'use babel'
+/* @flow */
 
 import { Point } from 'atom'
 import * as Helpers from '../'
