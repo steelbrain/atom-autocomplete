@@ -1,17 +1,15 @@
 /* @flow */
 
 import { Point } from 'atom'
+import { beforeEach } from 'jasmine-fix'
 import * as Helpers from '../'
 
 describe('Atom-Autocomplete', function() {
   let editor
 
-  beforeEach(function() {
-    waitsForPromise(function() {
-      return atom.workspace.open(__filename).then(function() {
-        editor = atom.workspace.getActiveTextEditor()
-      })
-    })
+  beforeEach(async function() {
+    await atom.workspace.open(__filename)
+    editor = atom.workspace.getActiveTextEditor()
   })
   afterEach(function() {
     atom.workspace.destroyActivePaneItem()
