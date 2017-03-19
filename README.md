@@ -1,6 +1,8 @@
 Atom-Autocomplete
 ================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/steelbrain/atom-autocomplete.svg)](https://greenkeeper.io/)
+
 Atom-Autocomplete is a node helper module for your Atom Autocomplete providers
 
 ## Installation
